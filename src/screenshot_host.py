@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import getpass
 from IPython import embed
+import sys
 
 def stable_click(s, repeats = 5):
     button = browser.find_element_by_name(s)
@@ -27,7 +28,7 @@ browser.get("https://10.1.7.111/zabbix/charts.php?ddreset=1")
 
 stable_click('login')
 send_str('name', 'ta221')
-send_str('password', getpass.getpass())
+send_str('password', sys.argv[1])
 stable_click('enter')
 
 
@@ -50,6 +51,6 @@ print('\n'.join('> ' + s for s in content))
 target = input('Please enter the graph type: ')
 sel.select_by_value(mapping_dict[target])
 
-screenshot_name = input('Please enter the screenshot name: ')
+screenshot_name = input('Please enter the screenshot name (xxx.png): ')
 browser.save_screenshot(screenshot_name)
 browser.close()

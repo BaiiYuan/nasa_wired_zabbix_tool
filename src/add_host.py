@@ -5,6 +5,8 @@ from selenium.webdriver.common.keys import Keys
 from IPython import embed
 import time
 from selenium.webdriver.chrome.options import Options
+import sys
+
 chrome_options = Options()
 WINDOW_SIZE = "1920,1080"
 chrome_options.add_argument("--headless")
@@ -25,7 +27,7 @@ def send_str(s1, s2, clear = False):
 	inp.send_keys(s2)
 stable_click('login')
 send_str('name', 'ta221')
-send_str('password', getpass.getpass())
+send_str('password', sys.argv[1])
 stable_click('enter')
 stable_click('form')
 ip = input('Please enter host name(ip address): ')
@@ -48,7 +50,7 @@ inp.send_keys("Template Net Cisco IOS SNMPv2")
 available = browser.find_element_by_class_name('available')
 time.sleep(1)
 button = available.find_element_by_class_name('multiselect-suggest')
-button.click()     
+button.click()
 button = browser.find_elements_by_class_name('btn-link')
 button[6].click()
 buttons = browser.find_elements_by_class_name('ui-corner-top')

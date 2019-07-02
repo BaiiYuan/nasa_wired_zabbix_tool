@@ -1,4 +1,9 @@
-print("[*] Welcome to Zabbix tool")
+import os
+import getpass
+
+print("[*] Welcome to Zabbix tool, please enter the ta221 password first :)")
+password = getpass.getpass()
+
 print("[-] Select the number of function to use or key 'q' to leave")
 print(" [1] Add New Host")
 print(" [2] Disable an Existing Host")
@@ -19,4 +24,4 @@ while target != "q":
         print("[*] Not a valid function number. Please try again.")
     else:
         filename = fileList[target]
-        print(filename)
+        os.system(f"python3 src/{filename} {password}")

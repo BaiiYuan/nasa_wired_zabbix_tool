@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import getpass
 from IPython import embed
+import sys
 
 def stable_click(s, repeats = 5):
     button = browser.find_element_by_name(s)
@@ -27,7 +28,7 @@ browser.get("https://10.1.7.111/zabbix/hosts.php?ddreset=1")
 
 stable_click('login')
 send_str('name', 'ta221')
-send_str('password', getpass.getpass())
+send_str('password', sys.argv[1])
 stable_click('enter')
 
 lst = browser.find_elements_by_tag_name('tr')[1:]
