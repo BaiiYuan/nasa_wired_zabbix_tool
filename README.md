@@ -11,4 +11,5 @@ Password:
 ```
 輸入功能編號後四種功能可能會分別問一些需要的資訊，如[1]會問你新主機的ip和名稱，[2]會列出主機列表後問你要disable哪一台，[4]則會問你想要看的主機，列出他所有port後問你想看哪個port，然後再問你截圖要存至哪個檔案。
 下面為一個demo使用方式的影片，影片中我們使用此script新增了一台測試用主機，接著把他disable掉，去web介面確認他真的被disable掉了，接著使用screenshot功能，指定CSIE-Core的to NTU CC的port來看看他的近期流量並儲存截圖。
+
 [影片連結](https://drive.google.com/file/d/1qUBVbDKHKtqU1bNq5c6UsPMAz4Xw_Dfk/view?usp=sharing)
