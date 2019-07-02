@@ -18,8 +18,10 @@ fileList = {
     "4": "screenshot_host.py",
 }
 
-while target != "q":
+while True:
     target = input("> ")
+    if target == "q":
+        break
     if target not in known:
         print("[*] Not a valid function number. Please try again.")
     else:
